@@ -56,10 +56,8 @@ export default class SwitchSelector extends Component {
   }
 
   getSwipeDirection(gestureState) {
-    if (disableGestures)
-    {
-      return null;
-    }
+    const { disableGestures } = this.props;
+    if (disableGestures) return null;
     const { dx, dy, vx } = gestureState;
     // 0.1 velocity
     if (Math.abs(vx) > 0.1 && Math.abs(dy) < 80) {
